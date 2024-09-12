@@ -23,6 +23,8 @@ public class HibernateConfig {
 
             return new Configuration()
                     .mergeProperties(properties)
+                    .addAnnotatedClass(EmployeeEntity.class) // Configurando las clases a mapear individualmente
+                    .addAnnotatedClass(DepartmentEntity.class) // Configurando las clases a mapear individualmente
                     .buildSessionFactory();
         } catch (Throwable throwable) {
             System.err.println(throwable.getMessage());
